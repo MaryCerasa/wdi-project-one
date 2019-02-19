@@ -1,6 +1,8 @@
 $(() => {
 
   // Variables if playing with two//
+  // Game board boardOne//
+
   const player1 = 'X'
   const player2 = 'O'
 
@@ -21,6 +23,17 @@ $(() => {
   const $sqr = $('.square')
   const $winnerContainer = $('.winner')
   const $reset = $('#resetButton')
+  const $message = $('#message')
+
+  const audioOne = document.querySelector('.audioOne')
+  const squareOne = document.querySelector('#squareOne')
+
+  audioOne.src = 'audio/do_it.wav'
+
+  squareOne.addEventListener('click', () => {
+    audioOne.currentTime = 0
+    audioOne.play()
+  })
 
   $sqr.on('click', function(event){
     movesMade++
@@ -63,9 +76,33 @@ $(() => {
   }
 
   function declareWinner(winner) {
-    alert(winner)
+    alert(winner + 'is the winner')
+
+    // InnerHTML message?
+    //   if(winner === 'x') {
+    //     return $message.innerHTML('Player X is the winner')
+    //   } else(winner === 'o')
+    //   return $message.innerHTML('Player O is the winner')
   }
 
+  // Reset Button
+  //
+  // document.getElementById("resetButton").reset()
+  //
+  // $reset.on('click', function)
+
+
+  // // To disable other boards besides the taKen board
+  //   if (board.classList.contains('winner-X')) {
+  //     boardinPlay = -1
+  //     return
+  //   }
+  //   if (board.classList.contains('winner-O')) {
+  //     boardinPlay = -1
+  //     return
+  //   }
+
+  // Game board 2
 
 
 

@@ -15,7 +15,7 @@
     <h1>Ultimate Tic Tac Toe</h1>
   </header>
 
-  <h3 id="message">Message goes here.</h3>
+  <h3 id="message"></h3>
   <!-- Opening Page with Play Options to show ultimate vs regular - ask Jack about this -->
   <!--
   <fieldset id="group1">
@@ -47,8 +47,8 @@ Would you like to be X or O?
 <!-- Score and Timer Boxes -->
 
 <div class="scoreBox">
-  <div id="userLabel" class="badge">User</div>
-  <div id="computerLabel" class="badge">Comp</div>
+  <div id="userLabel" class="badge">Player One</div>
+  <div id="computerLabel" class="badge">Player Two</div>
   <span id="userScore">0</span>:<span id="computerScore">0</span>
 </div>
 
@@ -71,6 +71,7 @@ Would you like to be X or O?
 <div class="boardContainer">
   <div class="board" id="boardOne">
     <div class="square" id="squareOne"></div>
+    <audio class="audioOne"></audio>
     <div class="square" id="squareTwo"></div>
     <div class="square" id="squareThree"></div>
     <div class="square" id="squareFour"></div>
