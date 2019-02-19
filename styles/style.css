@@ -54,7 +54,7 @@ header {
 }
 
 .boardContainer {
-  width: 618px;
+  width: 1854px;
   flex-wrap: wrap;
   display: flex;
   margin: 0 auto;
@@ -62,9 +62,70 @@ header {
 }
 
 .board {
+  width: 618px;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+}
+
+#boardOne {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid red;
+}
+
+#boardTwo {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid blue;
+}
+
+#boardThree {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid orange;
+}
+
+#boardFour {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid black;
+}
+
+#boardFour {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid yellow;
+}
+
+#boardFive{
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid red;
+}
+
+#boardSix {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid blue;
+}
+
+#boardSeven {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid pink;
+}
+
+#boardEight {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid black;
+}
+
+#boardNine {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid orange;
 }
 
 .timerBox {
