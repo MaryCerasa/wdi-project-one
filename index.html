@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./styles/style.css">
-   <script src="./scripts/main.js" charset="utf-8"></script>
-    <title></title>
-  </head>
-  <body>
-    <h1>Hello</h1>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script src="./scripts/main.js" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="styles/animate.css"> -->
+  <title>Ultimate Tic Tac Toe</title>
+</head>
+<body>
+
+  <header>
+    <h1>Ultimate Tic Tac Toe</h1>
+  </header>
+
+<!-- Opening Page with Play Options to show ultimate vs regular - ask Jack about this -->
+<!--
+  <fieldset id="group1">
+    <p>Please choose the version you would like to play..</p>
+    <br><br>
+     <input type="radio" name="group1" value="classic" checked="checked">Classic
+     <input type="radio" name="group1" value="ultimate">Ultimate
+     <input type="radio" name="group1" value="superUltimate">Super Ultimate
+  </fieldset>
+
+ <br><br>
+
+<!-- X or O Player Form Page -->
+
+ <!-- <h3>
+<form id="playerForm" class="center">
+  <div>
+    Please select an option.
+  </div>
+<div>
+Would you like to be X or O?
+<br><br>
+</div>
+  <input type="radio" name="radio" value="X">X
+  <input type="radio" name="radio" value="O">O
+</form>
+</h3> -->
+
+<!-- Score and Timer Boxes -->
+
+  <div class="scoreBox">
+    <div id="userLabel" class="badge">User</div>
+    <div id="computerLabel" class="badge">Comp</div>
+    <span id="userScore">0</span>:<span id="computerScore">0</span>
+  </div>
+
+  <div class="timerBox" id="timerBox">
+    <h2>Timer Box:<span id="timerBox"> 0</span></h2>
+  </div>
+
+<!-- Reset Game Button -->
+
+<button id="resetButton">Play Again</button>
+
+<!-- Board Grid -->
+
+  <div class="boardContainer">
+    <div class="board">
+      <div class="square" id="squareOne"></div>
+      <div class="square" id="squareTwo"></div>
+      <div class="square" id="squareThree"></div>
+      <div class="square" id="squareFour"></div>
+      <div class="square" id="squareFive"></div>
+      <div class="square" id="squareSix"></div>
+      <div class="square" id="squareSeven"></div>
+      <div class="square" id="squareEight"></div>
+      <div class="square" id="squareNine"></div>
+    </div>
+  </div>
+
+<!-- My Footer -->
+
+  <footer>
+    <p>Created by Mary Cerasa, WDI 39 &hearts;</p>
+  </footer>
+
+</body>
 </html>
