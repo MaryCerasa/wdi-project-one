@@ -5,25 +5,41 @@
 }
 
 body {
-  background: white;
+  background: #7FDBFF;
   font-size: 25px;
-  color: black;
+  color: #FF7F9F;
   text-align: center;
   font-family: 'Playfair Display', sans-serif;
 }
 
 header {
-  margin: 25px 0;
+  padding: 20px;
+  border: 10px solid white;
+  color: #FF7F9F;
+  color: pink;
+  text-shadow:
+  -3px -3px 0 white,
+  3px -3px 0 white,
+  -3px 3px 0 white,
+  3px 3px 0 white;
+  font-size: 45px;
+  background-color: #7FFFDE;
 }
 
+#message {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
 .square {
   height: 200px;
   width: 200px;
-  border: 5px solid black;
   border-radius: 50%;
   font-size: 50px;
   text-align: center;
   justify-content: center;
+  background-color: #7FFFDE;
+  border: 3px solid white;
 }
 
 .square:hover {
@@ -31,29 +47,39 @@ header {
   cursor: pointer;
 }
 
+.hearts {
+  font-size: 30px;
+  text-align: center;
+  display: inline-block;
+}
+
 .boardContainer {
   width: 618px;
   flex-wrap: wrap;
   display: flex;
   margin: 0 auto;
+  text-align: center;
 }
 
 .board {
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .timerBox {
-  border: 3px solid black;
+  border: 7px dotted white;
   margin: 15px;
   padding: 20px;
   width: 200px;
   display: inline-block;
   border-radius: 4px;
+  color: white;
+  background-color: pink;
 }
 
 .scoreBox {
-  border: 3px solid black;
+  border: 7px dotted white;
   text-align: center;
   display: inline-block;
   border-radius: 4px;
@@ -63,6 +89,8 @@ header {
   font-size: 25px;
   width: 200px;
   font-family: 'Playfair Display', serif;
+  background-color: pink;
+  color: white;
 }
 
 .badge {
@@ -87,14 +115,18 @@ header {
 footer {
   margin: 25px 0;
   font-size: 15px;
+  color: white;
 }
 
 #resetButton {
-  border: 5px solid black;
+  border: 5px solid white;
   border-radius: 50%;
   font-size: 25px;
   padding: 25px;
   margin: 25px;
+  background-color: #FFDE7F;
+  color: white;
+  outline-style: none;
 }
 
 #resetButton:hover {
