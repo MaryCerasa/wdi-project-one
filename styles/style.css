@@ -68,65 +68,67 @@ header {
   text-align: center;
 }
 
-#boardOne {
+#board0 {
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
   background-color: pink;
 }
 
-#boardTwo {
+#board1 {
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
+    background-color: pink;
 }
 
-#boardThree {
+#board2 {
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
+    background-color: pink;
 }
 
-#boardFour {
+#board3 {
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
+    background-color: pink;
 }
 
-#boardFour {
+#board4 {
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
+    background-color: pink;
 }
 
-#boardFive{
+#board5{
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
+    background-color: pink;
 }
 
-#boardSix {
+#board6 {
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
+    background-color: pink;
 }
 
-#boardSeven {
+#board7 {
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
+    background-color: pink;
 }
 
-#boardEight {
+#board8 {
   display: flex;
   flex-wrap: wrap;
   border: 3px solid white;
-}
-
-#boardNine {
-  display: flex;
-  flex-wrap: wrap;
-  border: 3px solid white;
+    background-color: pink;
 }
 
 .timerBox {

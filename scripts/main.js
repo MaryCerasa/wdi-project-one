@@ -7,6 +7,7 @@ $(() => {
   const player2 = 'O'
 
   let isPlayerOneTurn = true
+
   let movesMade = 0
 
   const winningCombos = [
@@ -20,9 +21,10 @@ $(() => {
     [2,4,6]
   ]
 
-// Overall empty board grid //
+  // Overall empty board grid //
 
-const boardGrid = ['', '', '', '', '', '', '', '', '']
+  const boardGrid = ['', '', '', '', '', '', '', '', '']
+
   let currentGame = null
 
   const $sqr = $('.square')
@@ -30,19 +32,18 @@ const boardGrid = ['', '', '', '', '', '', '', '', '']
   // const $reset = $('#resetButton')
   const $message = $('#message')
 
-  const audioOne = document.querySelector('.audioOne')
-  const squareOne = document.querySelector('#squareOne', '#squareTwo')
-
-  //Button Click Sounds //
-
-  audioOne.src = 'audio/drawcircle.wav'
-  squareOne.addEventListener('click', () => {
-    audioOne.currentTime = 0
-    audioOne.play()
-  })
+  // const audioOne = document.querySelector('.audioOne')
+  // const squareOne = document.querySelector('#squareOne', '#squareTwo')
+  //
+  // //Button Click Sounds //
+  //
+  // audioOne.src = 'audio/drawcircle.wav'
+  // squareOne.addEventListener('click', () => {
+  //   audioOne.currentTime = 0
+  //   audioOne.play()
+  // })
 
   $sqr.on('click', function(event){
-    console.log('current game is ', currentGame)
     if(currentGame === null || currentGame === $(this).parent().attr('id')) {
       currentGame = $(this).parent().attr('id')
       movesMade++
@@ -57,8 +58,11 @@ const boardGrid = ['', '', '', '', '', '', '', '', '']
 
     if(checkforWinner()) {
       $(`#${currentGame}`).empty()
-      currentGame = null
       declareWinner(isPlayerOneTurn ? player1 : player2)
+    }
+    if(checkGameWinner()) {
+      console.log('checkGameWinner is doing its thing')
+      declareGameWinner(isPlayerOneTurn ? player1 : player2)
     }
     isPlayerOneTurn = !isPlayerOneTurn
   })
@@ -68,7 +72,7 @@ const boardGrid = ['', '', '', '', '', '', '', '', '']
     const os = []
     let winner = ''
 
-    Array.from($sqr).forEach((item, index) => {
+    Array.from($(`#${currentGame}`).children()).forEach((item, index) => {
       if(item.innerHTML === 'X') {
         xs.push(index)
       } else if (item.innerHTML === 'O') {
@@ -87,22 +91,50 @@ const boardGrid = ['', '', '', '', '', '', '', '', '']
   }
 
   function declareWinner(winner) {
-
-    alert('Congratulations!' + '' + winner + 'is the winner')
-
-    // InnerHTML message?
-    //   if(winner === 'x') {
-    //     return $message.innerHTML('Player X is the winner')
-    //   } else(winner === 'o')
-    //   return $message.innerHTML('Player O is the winner')
+    boardGrid.splice(currentGame.split('')[5], 1, winner)
+    console.log(boardGrid)
+    alert('Congratulations! ' + winner + ' is the winner')
+    currentGame = null
+    checkGameWinner()
   }
 
+  function checkGameWinner(){
+    const xs = []
+    const os = []
+    let winner = ''
+
+    // Getting lost here!!!!!!!!!
+    Array.from(boardGrid).forEach((item, index) => {
+      if(item.innerHTML === 'X') {
+        xs.push(index)
+      } else if (item.innerHTML === 'O') {
+        os.push(index)
+      }
+    })
+
+    winningCombos.forEach(combo => {
+      if(combo.every(number => xs.includes(number))) {
+        winner = 'X!'
+      } else if (combo.every(number => os.includes(number))) {
+        winner = 'O!'
+      }
+    })
+    console.log(winner, 'is the winner')
+    checkForOverallWin()
+    return winner
+  }
+  //To here!!!!!!!
+  function declareGameWinner(winner) {
+    console.log('the actual bloody winner')
+    alert('Bravo!!!! ' + winner + ' has won the game.')
+    return winner
+  }
   // Reset Button
 
   const winner = null
 
-  function clearBoxes(number) {
-    return document.getElementById('.square' + number).innerHTML = ''
+  function clearBoxes() {
+  
   }
 
   const btnReset = document.getElementById('#resetButton')
@@ -112,6 +144,22 @@ const boardGrid = ['', '', '', '', '', '', '', '', '']
   })
 
   // Game board 2
+  // let overAllWinner = ''
+  function checkForOverallWin(){
+    console.log('I am checking for overall win')
+    winningCombos.forEach(combo => {
+      if(combo.every(number => boardGrid[number] === 'X')) {
+        currentGame = null
+        // overAllWinner = 'X!'
+        console.log('X! has WON')
+      } else if (combo.every(number => boardGrid[number] === 'O')) {
+        currentGame = null
+        // overAllWinner = 'O!'
+        console.log('O! has WON')
+      }
+    })
+
+  }
 
 
 
