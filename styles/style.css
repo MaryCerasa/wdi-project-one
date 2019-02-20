@@ -68,6 +68,16 @@ header {
   text-align: center;
 }
 
+.board.winO {
+  background-image: url(http://jimdscott.com/static/images/tic-tac-toe-O.png);
+  border: 
+  background-color:
+}
+
+.board.winX {
+  background-image: url(http://jimdscott.com/static/images/tic-tac-toe-X.png);
+}
+
 #board0 {
   display: flex;
   flex-wrap: wrap;

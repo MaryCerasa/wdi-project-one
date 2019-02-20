@@ -29,7 +29,7 @@ $(() => {
 
   const $sqr = $('.square')
   const $winnerContainer = $('.winner')
-  // const $reset = $('#resetButton')
+  const $reset = $('#resetButton')
   const $message = $('#message')
 
   // const audioOne = document.querySelector('.audioOne')
@@ -44,6 +44,7 @@ $(() => {
   // })
 
   $sqr.on('click', function(event){
+    console.log('CLICKING')
     if(currentGame === null || currentGame === $(this).parent().attr('id')) {
       currentGame = $(this).parent().attr('id')
       movesMade++
@@ -57,7 +58,14 @@ $(() => {
     }
 
     if(checkforWinner()) {
-      $(`#${currentGame}`).empty()
+      // $(`#${currentGame}`).empty()
+      $(`#${currentGame}`).children().empty().removeClass('square') // remobves the classes from the little squares
+      if(isPlayerOneTurn) {
+        $(`#${currentGame}`).addClass('winX')
+      } else {
+        $(`#${currentGame}`).addClass('winO')
+      }
+
       declareWinner(isPlayerOneTurn ? player1 : player2)
     }
     if(checkGameWinner()) {
@@ -134,13 +142,13 @@ $(() => {
   const winner = null
 
   function clearBoxes() {
-  
+
   }
 
-  const btnReset = document.getElementById('#resetButton')
+  $reset.on('click', function(){
+    console.log('reset is clicked..')
 
-  btnReset.addEventListener('click', function(){
-    winner !== null
+    $('.board').find('div').addClass('square')
   })
 
   // Game board 2
