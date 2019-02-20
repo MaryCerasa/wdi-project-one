@@ -12,18 +12,16 @@
 <body>
 
   <header>
-    <h1>Ultimate Tic Tac Toe</h1>
+    <h1>&hearts; Ultimate Tic Tac Toe &hearts;</h1>
   </header>
 
-  <h3 id="message"></h3>
-  <!-- Opening Page with Play Options to show ultimate vs regular - ask Jack about this -->
+  <!-- Opening Page with Play Options to show ultimate vs regular  -->
   <!--
   <fieldset id="group1">
   <p>Please choose the version you would like to play..</p>
   <br><br>
   <input type="radio" name="group1" value="classic" checked="checked">Classic
   <input type="radio" name="group1" value="ultimate">Ultimate
-  <input type="radio" name="group1" value="superUltimate">Super Ultimate
 </fieldset>
 
 <br><br>
@@ -46,33 +44,48 @@ Would you like to be X or O?
 
 <!-- Score and Timer Boxes -->
 
-<div class="scoreBox">
+<!-- <div class="scoreBox">
   <div id="userLabel" class="badge">Player One</div>
   <div id="computerLabel" class="badge">Player Two</div>
   <span id="userScore">0</span>:<span id="computerScore">0</span>
+</div> -->
+
+<!-- <div class="timerBox" id="timerBox">
+  <h2>Timer Box:<span id="timerBox"> 0</span></h2>
+</div> -->
+
+<!-- Player Turn Box Display -->
+
+<div class="turnBox">
+  <h2>Player Turn:<span id="message"></span></h2>
 </div>
 
-<div class="timerBox" id="timerBox">
-  <h2>Timer Box:<span id="timerBox"> 0</span></h2>
+<!-- Winner Message Display Box -->
+
+<div class="winnerBox" id="messageBox">
+  <h2>Winner:<span id="message"></span></h2>
 </div>
 
 <!-- Reset Game Button -->
 
 <button id="resetButton">Play Again</button>
 
-<!-- Board Grid -->
+<!-- Board Grids -->
 
+<!-- Styling -->
+
+<!-- <div class="hearts">&hearts;</div>
 <div class="hearts">&hearts;</div>
 <div class="hearts">&hearts;</div>
 <div class="hearts">&hearts;</div>
-<div class="hearts">&hearts;</div>
-<div class="hearts">&hearts;</div>
+<div class="hearts">&hearts;</div> -->
 
 <div class="boardContainer">
   <div class="board" id="boardOne">
     <div class="square" id="squareOne"></div>
     <audio class="audioOne"></audio>
     <div class="square" id="squareTwo"></div>
+    <audio class="audioOne"></audio>
     <div class="square" id="squareThree"></div>
     <div class="square" id="squareFour"></div>
     <div class="square" id="squareFive"></div>

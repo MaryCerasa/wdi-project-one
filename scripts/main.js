@@ -22,14 +22,15 @@ $(() => {
 
   const $sqr = $('.square')
   const $winnerContainer = $('.winner')
-  const $reset = $('#resetButton')
+  // const $reset = $('#resetButton')
   const $message = $('#message')
 
   const audioOne = document.querySelector('.audioOne')
-  const squareOne = document.querySelector('#squareOne')
+  const squareOne = document.querySelector('#squareOne', '#squareTwo')
 
-  audioOne.src = 'audio/do_it.wav'
+  //Button Click Sounds //
 
+  audioOne.src = 'audio/drawcircle.wav'
   squareOne.addEventListener('click', () => {
     audioOne.currentTime = 0
     audioOne.play()
@@ -50,7 +51,6 @@ $(() => {
     }
     isPlayerOneTurn = !isPlayerOneTurn
   })
-
 
   function checkforWinner() {
     const xs = []
@@ -76,7 +76,7 @@ $(() => {
   }
 
   function declareWinner(winner) {
-    alert(winner + 'is the winner')
+    alert('Congratulations!' + '' + winner + 'is the winner')
 
     // InnerHTML message?
     //   if(winner === 'x') {
@@ -86,11 +86,18 @@ $(() => {
   }
 
   // Reset Button
-  //
-  // document.getElementById("resetButton").reset()
-  //
-  // $reset.on('click', function)
 
+  const winner = null
+
+  function clearBoxes(number) {
+    return document.getElementById('.square' + number).innerHTML = ''
+  }
+
+  const btnReset = document.getElementById('#resetButton')
+
+  btnReset.addEventListener('click', function(){
+    winner !== null
+  })
 
   // // To disable other boards besides the taKen board
   //   if (board.classList.contains('winner-X')) {

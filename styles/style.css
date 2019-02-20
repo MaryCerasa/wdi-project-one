@@ -71,61 +71,62 @@ header {
 #boardOne {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid red;
+  border: 3px solid white;
+  background-color: pink;
 }
 
 #boardTwo {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid blue;
+  border: 3px solid white;
 }
 
 #boardThree {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid orange;
+  border: 3px solid white;
 }
 
 #boardFour {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid black;
+  border: 3px solid white;
 }
 
 #boardFour {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid yellow;
+  border: 3px solid white;
 }
 
 #boardFive{
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid red;
+  border: 3px solid white;
 }
 
 #boardSix {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid blue;
+  border: 3px solid white;
 }
 
 #boardSeven {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid pink;
+  border: 3px solid white;
 }
 
 #boardEight {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid black;
+  border: 3px solid white;
 }
 
 #boardNine {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid orange;
+  border: 3px solid white;
 }
 
 .timerBox {
@@ -152,6 +153,32 @@ header {
   font-family: 'Playfair Display', serif;
   background-color: pink;
   color: white;
+}
+
+.winnerBox {
+  border: 7px dotted white;
+  margin: 15px;
+  padding: 20px;
+  width: 200px;
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  border-radius: 4px;
+  color: white;
+  background-color: pink;
+  float: left;
+}
+
+.turnBox {
+  border: 7px dotted white;
+  margin: 15px;
+  padding: 20px;
+  width: 200px;
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  border-radius: 4px;
+  color: white;
+  background-color: pink;
+  float: right;
 }
 
 .badge {
