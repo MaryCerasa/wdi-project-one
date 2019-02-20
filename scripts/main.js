@@ -20,6 +20,11 @@ $(() => {
     [2,4,6]
   ]
 
+// Overall empty board grid //
+
+const boardGrid = ['', '', '', '', '', '', '', '', '']
+  let currentGame = null
+
   const $sqr = $('.square')
   const $winnerContainer = $('.winner')
   // const $reset = $('#resetButton')
@@ -37,16 +42,22 @@ $(() => {
   })
 
   $sqr.on('click', function(event){
-    movesMade++
-    if(isPlayerOneTurn) {
-      event.target.innerHTML = player1
-      event.target.style.color = 'yellow'
-    } else {
-      event.target.innerHTML = player2
-      event.target.style.color = 'orange'
+    console.log('current game is ', currentGame)
+    if(currentGame === null || currentGame === $(this).parent().attr('id')) {
+      currentGame = $(this).parent().attr('id')
+      movesMade++
+      if(isPlayerOneTurn) {
+        event.target.innerHTML = player1
+        event.target.style.color = 'yellow'
+      } else {
+        event.target.innerHTML = player2
+        event.target.style.color = 'orange'
+      }
     }
 
     if(checkforWinner()) {
+      $(`#${currentGame}`).empty()
+      currentGame = null
       declareWinner(isPlayerOneTurn ? player1 : player2)
     }
     isPlayerOneTurn = !isPlayerOneTurn
@@ -76,6 +87,7 @@ $(() => {
   }
 
   function declareWinner(winner) {
+
     alert('Congratulations!' + '' + winner + 'is the winner')
 
     // InnerHTML message?
@@ -98,16 +110,6 @@ $(() => {
   btnReset.addEventListener('click', function(){
     winner !== null
   })
-
-  // // To disable other boards besides the taKen board
-  //   if (board.classList.contains('winner-X')) {
-  //     boardinPlay = -1
-  //     return
-  //   }
-  //   if (board.classList.contains('winner-O')) {
-  //     boardinPlay = -1
-  //     return
-  //   }
 
   // Game board 2
 
