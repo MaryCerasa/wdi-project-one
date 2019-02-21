@@ -32,19 +32,14 @@ $(() => {
   const $reset = $('#resetButton')
   const $message = $('#message')
 
-// Audio examples
+  // Audio Variables //
 
-  // const audioOne = document.querySelector('.audioOne')
-  // const squareOne = document.querySelector('#squareOne', '#squareTwo')
-  //
-  // //Button click sounds and alert messages //
-  //
-  // audioOne.src = 'audio/drawcircle.wav'
-  // squareOne.addEventListener('click', () => {
-  //   audioOne.currentTime = 0
-  //   audioOne.play()
-  // })
-
+  const player1Sound = document.getElementById('drawX')
+  const player2Sound = document.getElementById('drawO')
+  const winSmallBoard = document.getElementById('smallSuccessSound')
+  const winLargeBoard = document.getElementById('largeSuccessSound')
+  const resetSound = document.getElementById('resetSound')
+  // const drawSound = document.getElementById('drawSound')
 
 // Click to add X or O and return nothing to remain the same //
 
@@ -54,10 +49,11 @@ $(() => {
       currentGame = $(this).parent().attr('id')
       movesMade++
       if(isPlayerOneTurn) {
-        resetSound.play()
+        player1Sound.play()
         event.target.innerHTML = player1
         event.target.style.color = 'yellow'
       } else {
+        player2Sound.play()
         event.target.innerHTML = player2
         event.target.style.color = 'orange'
       }
@@ -99,8 +95,10 @@ $(() => {
 
     winningCombos.forEach(combo => {
       if(combo.every(number => xs.includes(number))) {
+        winSmallBoard.play()
         winner = 'X!'
       } else if (combo.every(number => os.includes(number))) {
+        winSmallBoard.play()
         winner = 'O!'
       }
       // }
@@ -108,7 +106,7 @@ $(() => {
     return winner
   }
 
-// Announces individual game winner and set alert message
+  // Announces individual game winner and set alert message
 
   function declareWinner(winner) {
     boardGrid.splice(currentGame.split('')[5], 1, winner)
@@ -117,11 +115,6 @@ $(() => {
     currentGame = null
     checkGameWinner()
   }
-
-// Audio alert win sound //
-
-    // const success = document.querySelector('.successfulWin')
-    //   success.addEventListener('alert', () => {
 
   function checkGameWinner(){
     const xs = []
@@ -150,7 +143,7 @@ $(() => {
     return winner
   }
 
-// Announces overall game winner and sets alert message
+// Announces overall game winner //
 
   function declareGameWinner(winner) {
     console.log('the actual bloody winner')
@@ -161,6 +154,7 @@ $(() => {
   // Reset Button //
 
   $reset.on('click', function(){
+    resetSound.play()
     console.log('reset is clicked..')
 
     $('.board').find('div').addClass('square')
@@ -172,7 +166,7 @@ $(() => {
 
   // })
 
-  const resetSound = document.getElementById('resetSound')
+  // const resetSound = document.getElementById('resetSound')
   // $reset.on('click', function(){
   //   resetSound.play()
   // })
@@ -183,10 +177,12 @@ $(() => {
     console.log('I am checking for overall win')
     winningCombos.forEach(combo => {
       if(combo.every(number => boardGrid[number] === 'X')) {
+        winLargeBoard.play()
         currentGame = null
         // overAllWinner = 'X!'
         console.log('X! has WON')
       } else if (combo.every(number => boardGrid[number] === 'O')) {
+        winLargeBoard.play()
         currentGame = null
         // overAllWinner = 'O!'
         console.log('O! has WON')
@@ -194,7 +190,5 @@ $(() => {
     })
 
   }
-
-
 
 })

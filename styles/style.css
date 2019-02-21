@@ -55,6 +55,7 @@ header {
 
 .boardContainer {
   width: 696px;
+  height: 696px;
   flex-wrap: wrap;
   display: flex;
   margin: 0 auto;
@@ -63,9 +64,11 @@ header {
 
 .board {
   width: 232px;
+  height: 232px;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  justify-content: center;
 }
 
 .board.winO {
