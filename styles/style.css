@@ -32,8 +32,8 @@ header {
   color: white;
 }
 .square {
-  height: 200px;
-  width: 200px;
+  height: 75px;
+  width: 75px;
   border-radius: 50%;
   font-size: 50px;
   text-align: center;
@@ -54,7 +54,7 @@ header {
 }
 
 .boardContainer {
-  width: 1854px;
+  width: 696px;
   flex-wrap: wrap;
   display: flex;
   margin: 0 auto;
@@ -62,7 +62,7 @@ header {
 }
 
 .board {
-  width: 618px;
+  width: 232px;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -70,12 +70,17 @@ header {
 
 .board.winO {
   background-image: url(http://jimdscott.com/static/images/tic-tac-toe-O.png);
-  border: 
-  background-color:
+  border: blue;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .board.winX {
   background-image: url(http://jimdscott.com/static/images/tic-tac-toe-X.png);
+  background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 #board0 {
@@ -83,6 +88,7 @@ header {
   flex-wrap: wrap;
   border: 3px solid white;
   background-color: pink;
+  text-align: center;
 }
 
 #board1 {

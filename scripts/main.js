@@ -1,14 +1,14 @@
 $(() => {
 
-  // Variables if playing with two//
-  // Game board boardOne//
+// Variables  - 2 players //
 
   const player1 = 'X'
   const player2 = 'O'
 
   let isPlayerOneTurn = true
-
   let movesMade = 0
+
+// All possible win combinations //
 
   const winningCombos = [
     [0,1,2],
@@ -32,10 +32,12 @@ $(() => {
   const $reset = $('#resetButton')
   const $message = $('#message')
 
+// Audio examples
+
   // const audioOne = document.querySelector('.audioOne')
   // const squareOne = document.querySelector('#squareOne', '#squareTwo')
   //
-  // //Button Click Sounds //
+  // //Button click sounds and alert messages //
   //
   // audioOne.src = 'audio/drawcircle.wav'
   // squareOne.addEventListener('click', () => {
@@ -43,12 +45,16 @@ $(() => {
   //   audioOne.play()
   // })
 
+
+// Click to add X or O and return nothing to remain the same //
+
   $sqr.on('click', function(event){
-    console.log('CLICKING')
+    if($(this).text()) return
     if(currentGame === null || currentGame === $(this).parent().attr('id')) {
       currentGame = $(this).parent().attr('id')
       movesMade++
       if(isPlayerOneTurn) {
+        resetSound.play()
         event.target.innerHTML = player1
         event.target.style.color = 'yellow'
       } else {
@@ -57,9 +63,11 @@ $(() => {
       }
     }
 
+// Checks for the individual winner and removes the classes from the little squares, adding X and O photos as placeholders for winner as each game is won //
+
     if(checkforWinner()) {
       // $(`#${currentGame}`).empty()
-      $(`#${currentGame}`).children().empty().removeClass('square') // remobves the classes from the little squares
+      $(`#${currentGame}`).children().empty().removeClass('square')
       if(isPlayerOneTurn) {
         $(`#${currentGame}`).addClass('winX')
       } else {
@@ -78,6 +86,7 @@ $(() => {
   function checkforWinner() {
     const xs = []
     const os = []
+    const draw = []
     let winner = ''
 
     Array.from($(`#${currentGame}`).children()).forEach((item, index) => {
@@ -94,9 +103,12 @@ $(() => {
       } else if (combo.every(number => os.includes(number))) {
         winner = 'O!'
       }
+      // }
     })
     return winner
   }
+
+// Announces individual game winner and set alert message
 
   function declareWinner(winner) {
     boardGrid.splice(currentGame.split('')[5], 1, winner)
@@ -106,12 +118,18 @@ $(() => {
     checkGameWinner()
   }
 
+// Audio alert win sound //
+
+    // const success = document.querySelector('.successfulWin')
+    //   success.addEventListener('alert', () => {
+
   function checkGameWinner(){
     const xs = []
     const os = []
     let winner = ''
 
-    // Getting lost here!!!!!!!!!
+// Make X and O unchangeable
+
     Array.from(boardGrid).forEach((item, index) => {
       if(item.innerHTML === 'X') {
         xs.push(index)
@@ -131,28 +149,36 @@ $(() => {
     checkForOverallWin()
     return winner
   }
-  //To here!!!!!!!
+
+// Announces overall game winner and sets alert message
+
   function declareGameWinner(winner) {
     console.log('the actual bloody winner')
     alert('Bravo!!!! ' + winner + ' has won the game.')
     return winner
   }
-  // Reset Button
 
-  const winner = null
-
-  function clearBoxes() {
-
-  }
+  // Reset Button //
 
   $reset.on('click', function(){
     console.log('reset is clicked..')
 
     $('.board').find('div').addClass('square')
+    $('.board').removeClass('winO')
+    $('.board').removeClass('winX')
   })
 
-  // Game board 2
-  // let overAllWinner = ''
+// Reset button sound? //
+
+  // })
+
+  const resetSound = document.getElementById('resetSound')
+  // $reset.on('click', function(){
+  //   resetSound.play()
+  // })
+
+  // Checking for an overall game winner and displaying win message //
+
   function checkForOverallWin(){
     console.log('I am checking for overall win')
     winningCombos.forEach(combo => {
