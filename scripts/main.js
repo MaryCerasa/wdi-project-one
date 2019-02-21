@@ -82,16 +82,26 @@ $(() => {
   function checkforWinner() {
     const xs = []
     const os = []
-    const draw = []
     let winner = ''
 
     Array.from($(`#${currentGame}`).children()).forEach((item, index) => {
       if(item.innerHTML === 'X') {
         xs.push(index)
+        console.log('xs2',xs.length)
       } else if (item.innerHTML === 'O') {
         os.push(index)
       }
     })
+    const filledSquares = xs.length + os.length
+    console.log('filledSquares',filledSquares)
+    if(filledSquares === 9){
+      alert('The Game is a draw')
+      reset()
+      // $(`#${currentGame}`).children().empty().removeClass('winX winO')
+    }else{
+      console.log('no winner yet')
+
+    }
 
     winningCombos.forEach(combo => {
       if(combo.every(number => xs.includes(number))) {
@@ -116,20 +126,22 @@ $(() => {
     checkGameWinner()
   }
 
+// FIX THIS PART !!!!!
+
   function checkGameWinner(){
+    console.log('hey im being run')
     const xs = []
     const os = []
     let winner = ''
 
-// Make X and O unchangeable
-
     Array.from(boardGrid).forEach((item, index) => {
-      if(item.innerHTML === 'X') {
+      if(item === 'X') {
         xs.push(index)
-      } else if (item.innerHTML === 'O') {
+      } else if (item === 'O') {
         os.push(index)
       }
     })
+
 
     winningCombos.forEach(combo => {
       if(combo.every(number => xs.includes(number))) {
@@ -153,23 +165,18 @@ $(() => {
 
   // Reset Button //
 
-  $reset.on('click', function(){
+  function reset() {
     resetSound.play()
-    console.log('reset is clicked..')
 
     $('.board').find('div').addClass('square')
     $('.board').removeClass('winO')
     $('.board').removeClass('winX')
-  })
+    $sqr.each((index, element) => {
+      $(element).text('')
+    })
+  }
 
-// Reset button sound? //
-
-  // })
-
-  // const resetSound = document.getElementById('resetSound')
-  // $reset.on('click', function(){
-  //   resetSound.play()
-  // })
+  $reset.on('click', reset)
 
   // Checking for an overall game winner and displaying win message //
 
