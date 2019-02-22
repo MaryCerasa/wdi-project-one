@@ -30,7 +30,9 @@ $(() => {
   const $sqr = $('.square')
   const $winnerContainer = $('.winner')
   const $reset = $('#resetButton')
-  const $message = $('#message')
+  const $messageWin = $('#messageWin')
+  const $messagebigWin = $('#messageOverallWin')
+  const $draw = $('#draw')
 
   // Audio Variables //
 
@@ -98,8 +100,9 @@ $(() => {
     const filledSquares = xs.length + os.length
     console.log('filledSquares',filledSquares)
     if(filledSquares === 9){
+      $('#draw').text('Opps, the game is a draw!')
       drawSound.play()
-      alert('The Game is a draw')
+      // alert('The Game is a draw')
       reset()
       // $(`#${currentGame}`).children().empty().removeClass('winX winO')
     }else{
@@ -123,9 +126,10 @@ $(() => {
   // Announces individual game winner and set alert message
 
   function declareWinner(winner) {
+    $('#messageWin').text('Congrats! ' + winner + ' is the winner')
     boardGrid.splice(currentGame.split('')[5], 1, winner)
     console.log(boardGrid)
-    alert('Congratulations! ' + winner + ' is the winner')
+    // alert('Congratulations! ' + winner + ' is the winner')
     currentGame = null
     checkGameWinner()
   }
@@ -162,20 +166,22 @@ $(() => {
 // Announces overall game winner //
 
   function declareGameWinner(winner) {
+    $('#messageOverallWin').text('Bravo! ' + winner + ' has won the game')
     overallWinner.play()
     console.log('the actual bloody winner')
-    alert('Bravo!!!! ' + winner + ' has won the game.')
+    // alert('Bravo!!!! ' + winner + ' has won the game.')
     return winner
   }
 
   // Reset Button //
 
   function reset() {
-    resetSound.play()
     // location.reload()
+    resetSound.play()
     $('.board').find('div').addClass('square')
     $('.board').removeClass('winO')
     $('.board').removeClass('winX')
+    // $('#draw').text('')
     $sqr.each((index, element) => {
       $(element).text('')
     })
