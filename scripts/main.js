@@ -39,7 +39,8 @@ $(() => {
   const winSmallBoard = document.getElementById('smallSuccessSound')
   const winLargeBoard = document.getElementById('largeSuccessSound')
   const resetSound = document.getElementById('resetSound')
-  // const drawSound = document.getElementById('drawSound')
+  const drawSound = document.getElementById('drawSound')
+  const overallWinner = document.getElementById('overallWinner')
 
 // Click to add X or O and return nothing to remain the same //
 
@@ -84,6 +85,8 @@ $(() => {
     const os = []
     let winner = ''
 
+// Draw function is here //
+
     Array.from($(`#${currentGame}`).children()).forEach((item, index) => {
       if(item.innerHTML === 'X') {
         xs.push(index)
@@ -95,6 +98,7 @@ $(() => {
     const filledSquares = xs.length + os.length
     console.log('filledSquares',filledSquares)
     if(filledSquares === 9){
+      drawSound.play()
       alert('The Game is a draw')
       reset()
       // $(`#${currentGame}`).children().empty().removeClass('winX winO')
@@ -158,6 +162,7 @@ $(() => {
 // Announces overall game winner //
 
   function declareGameWinner(winner) {
+    overallWinner.play()
     console.log('the actual bloody winner')
     alert('Bravo!!!! ' + winner + ' has won the game.')
     return winner
@@ -167,7 +172,7 @@ $(() => {
 
   function reset() {
     resetSound.play()
-
+    // location.reload()
     $('.board').find('div').addClass('square')
     $('.board').removeClass('winO')
     $('.board').removeClass('winX')
