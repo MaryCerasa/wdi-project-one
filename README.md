@@ -1,6 +1,6 @@
 # Ultimate Tic Tac Toe
 
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project Brief: (*SEI Project 1:*) :video_game: 
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project Brief (*SEI Project 1*): :video_game: 
 
 * To create a fully functional game by using HTML5, CSS and vanilla JavaScript.
 
@@ -18,7 +18,7 @@
 
 ## App Overview:
 
-### Overview:   :x::o:
+### Overview   :x::o:
 
 Ultimate Tic Tac Toe is a variation on the classic children's game. In this version, each cell of the Tic Tac Toe board is another game of Tic Tac Toe. Winning a smaller game, places that player's token (X or O) in the larger game's cell.
 
@@ -34,7 +34,7 @@ The aim is to win the larger Tic Tac Toe game.
 
 ![screenshot](https://i.postimg.cc/wTDVxKd7/Full-Game-Screenshot1.png)
 
-### Approach:
+### Approach
 
 *Ultimate game -* The first challenge for me was to create a standard Tic Tac Toe game with a win condition. Then I had to ensure that the larger game was also implemented. I had to make good use of Object Oriented Programming (constructor functions) here. 
 
@@ -42,7 +42,7 @@ The aim is to win the larger Tic Tac Toe game.
 
 *Scoreboard -* Lastly, I had to ensure that the winner was displayed when the game is over.
 
-## Process & Walkthrough: :runner:
+## Process & Walkthrough :runner:
 
 As this was a solo project I worked using Version-Control via Git on GitHub myself. The game itself went through various development phases and I'd consistently write code and then rewrite once I found a better solution.  
 
@@ -56,7 +56,7 @@ __*Steps 1-5:*__
 * How to code an opening page and button intro
 * Code smaller boxes and then can make it bigger eventually
 
-**Gameboard:**
+**Gameboard**
 
 3 x 3 grid within  the larger 3 x 3 game board: 9 squares for each board, 81 squares to control in total (local versus global boards).
 
@@ -76,7 +76,7 @@ The Array starts at 0, so each combo has its own unique winning array (for examp
 
 ![screenshot](https://i.postimg.cc/QtVmjHX3/Local-Boards-Game.png)
 
-__*Various Code Snippets Below:*__
+__*Various Code Snippets Below*__
 
 **Variables:**
 
@@ -188,14 +188,14 @@ movesMade = 0
 ```
 ![screenshot](https://i.postimg.cc/cJxT5F26/Global-Score-Draw.png)
 
-## Look Back: :eyes:
+## Look Back :eyes:
 
-**Styling:**
+**Styling the Game:**
 
 *Color psychology -* I used CSS3 to style the game. I initially recieved from critical feedback regarding my "girly" color choice and use of hearts. Despite the fact that it is impossible to draw absolute generalisations between women and men, there are some overall differences in color attraction. For example, teenage girls seem to show a preference towards pink, purple and “feminine” colours.
 I feel it is important to design games that appeal to girls of this age range to encourage them to build an interest in tech, a realm where they may not generally see things that appeal to them regularly.
 
-*Dyanmic Elements -* I added unique sounds upon each board click - as well as upon local wins, ultimate wins and game draws - with Javascript, in order to keep the game lighthearted and fun. 
+*Dynamic Elements -* I added unique sounds upon each board click - as well as upon local wins, ultimate wins and game draws - with Javascript, in order to keep the game lighthearted and fun. 
 
 *Ultimate Grid -* One of the most challenging pieces to style was the board itself, as I had to use Flexbox to ensure that the 3 x 3 grid fit within the larger 3 x 3 game board (9 squares each and 81 total) was displayed on the screen with the right orientation. I had to ensure that each indiviual grid would change colors to reflect the winnter of the local board as well.
 
@@ -217,7 +217,7 @@ As this was my first ever JavaScript task, I found the project challenging. I ha
 - [x]   Learning how to manipulate the DOM by adding interactive components
 - [x]   Practicing Flexbox and CSS to create a unique design layout
 
-## Roadmap: :telescope:
+## Roadmap :telescope:
 
 **Future Features:** 
 
