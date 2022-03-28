@@ -1,8 +1,6 @@
 # Ultimate Tic Tac Toe
 
-![screenshot](https://i.postimg.cc/wTDVxKd7/Full-Game-Screenshot1.png)
-
- ### Project Brief: (*SEI Project 1:*) :video_game:
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project Brief: (*SEI Project 1:*) :video_game: 
 
 * To create a fully functional game by using HTML5, CSS and vanilla JavaScript.
 
@@ -33,6 +31,8 @@ The aim is to win the larger Tic Tac Toe game.
 **Client:** JavaScript(ES6), HTML5, CSS3, jQuery
 
 **Tools:** Git, GitHub, Flexbox
+
+![screenshot](https://i.postimg.cc/wTDVxKd7/Full-Game-Screenshot1.png)
 
 ### Approach:
 
